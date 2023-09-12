@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="MVVM/Themes/UserCard.xaml"/>
                 <ResourceDictionary Source="MVVM/Themes/ChatItem.xaml"/>
+                <ResourceDictionary Source="MVVM/Themes/MessageBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

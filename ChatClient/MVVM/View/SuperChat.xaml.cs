@@ -10,23 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ChatClient
+namespace ChatClient.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SuperChat.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SuperChat : Window
     {
-        public MainWindow()
+        public SuperChat()
         {
             InitializeComponent();
         }
+
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if(e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
@@ -39,7 +39,7 @@ namespace ChatClient
 
         private void WindowStateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
+            if(Application.Current.MainWindow.WindowState != WindowState.Maximized)
             {
                 Application.Current.MainWindow.WindowState = WindowState.Maximized;
             }
@@ -53,5 +53,6 @@ namespace ChatClient
         {
             Application.Current.Shutdown();
         }
+
     }
 }

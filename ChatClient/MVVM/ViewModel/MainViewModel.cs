@@ -14,7 +14,7 @@ namespace ChatClient.MVVM.ViewModel
     internal class MainViewModel
     {
         public ObservableCollection<UserModel> Users { get; set; }
-        public ObservableCollection<string> Messages { get; set; }
+        public ObservableCollection<MessageModel> Messages { get; set; }
 
         public RelayCommand ConnectToServerCommand { get; set; }
         public RelayCommand SendMessageCommand { get; set; }
@@ -26,7 +26,7 @@ namespace ChatClient.MVVM.ViewModel
         public MainViewModel()
         {
             Users = new ObservableCollection<UserModel>();
-            Messages = new ObservableCollection<string>();
+            Messages = new ObservableCollection<MessageModel>();
             server = new Server();
             server.connectedEvent += UserConnected;
             server.messageReceiveEvent += MessageReceive;

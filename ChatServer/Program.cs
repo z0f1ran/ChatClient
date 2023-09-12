@@ -19,7 +19,7 @@ namespace ChatServer
         static void Main(string[] args)
         {
             users= new List<Client>();
-            listener = new TcpListener(System.Net.IPAddress.Parse("127.0.0.1"), 8000);
+            listener = new TcpListener(System.Net.IPAddress.Parse("192.168.1.137"), 8000);
             listener.Start();
 
             while (true)

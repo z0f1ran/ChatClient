@@ -40,7 +40,12 @@ namespace ChatServer
                         case 5:
                             var msg = packetReader.ReadMessage();
                             Console.WriteLine($"[{DateTime.Now}]: Message received! {msg}");
-                            Program.BroadcastMessage($"[{DateTime.Now}]: [{Username}]: {msg}");
+                            Program.BroadcastMessage(new Model.MessageModel
+                            {
+                                Username = this.Username,
+                                Message = msg, 
+                                Time= DateTime.Now,
+                            }) ;
                             break;
                         default: break;
                     }

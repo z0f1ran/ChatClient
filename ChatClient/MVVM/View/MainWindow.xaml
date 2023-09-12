@@ -89,7 +89,7 @@
                         Background="#292B2F">
                 <Border CornerRadius="25" Width="30" Height="30" Background="#3bff6f" Margin="18,0,0,0"/>
                 <StackPanel VerticalAlignment="Center">
-                    <Label Content="" Foreground="White" FontWeight="SemiBold" Margin="0, -5, 0, -5"/>
+                    <Label Content="{Binding Username}" Foreground="White" FontWeight="SemiBold" Margin="0, -5, 0, -5"/>
                     <Label Content="Status" Foreground="Gray" FontWeight="SemiBold" FontSize="10" Margin="0, -5, 0, -5"/>
                 </StackPanel>
 
@@ -108,7 +108,11 @@
                 </Grid>
 
             </Border>
-            <ListView ItemsSource="{Binding Messages}" Grid.Row="1" Background="Transparent" BorderThickness="0"/>
+            <ListView ItemsSource="{Binding Messages}" Grid.Row="1" Background="Transparent" BorderThickness="0">
+                <ListView.ItemContainerStyle>
+                    <StaticResource ResourceKey="ChatItem" />
+                </ListView.ItemContainerStyle>
+            </ListView>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

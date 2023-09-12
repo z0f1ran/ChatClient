@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -46,7 +47,8 @@ namespace ChatClient.MVVM.ViewModel
         private void MessageReceive()
         {
             var msg = server.packetReader.ReadMessage();
-            Application.Current.Dispatcher.Invoke(() => Messages.Add(msg));
+            MessageModel model = JsonSerializer.Deserialize<MessageModel>(msg);
+            Application.Current.Dispatcher.Invoke(() => Messages.Add(model));
         }
 
         private void UserConnected()
